@@ -32,22 +32,23 @@
 
         th {
             background-color: #f2f2f2;
-            font-size: 14px;
+            font-size: 13px;
+            white-space: nowrap;
         }
 
         td {
-            font-size: 13px;
+            font-size: 12px;
         }
 
         audio {
-            width: 170px;
-            height: 40px;
+            width: 55px;
+            height: 32px;
         }
 
         .container {
             margin-left: 20px;
             margin-right: 20px;
-            max-width: 98%;
+            max-width: 99%;
         }
 
         h3 {
@@ -56,6 +57,17 @@
 
         h4 {
             margin-top: 30px;
+        }
+
+        /* Hide everything except play button */
+
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display,
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-volume-slider,
+        audio::-webkit-media-controls-mute-button,
+        audio::-webkit-media-controls-toggle-closed-captions-button {
+            display: none;
         }
 
     </style>
@@ -166,119 +178,127 @@ matched and mismatched noise conditions.
 
 <table>
 
-    <thead>
-        <tr>
+<thead>
+<tr>
 
-            <th>Sample</th>
+<th>Sample</th>
 
-            <th>Input</th>
+<th>Clean</th>
 
-            <th>SGMSE+</th>
+<th>Input</th>
 
-            <th>Conv-TasNet</th>
+<th>SGMSE+</th>
 
-            <th>RemixIT</th>
+<th>Conv-TasNet</th>
 
-            <th>RVAE</th>
+<th>RemixIT</th>
 
-            <th>UDiffSE</th>
+<th>RVAE</th>
 
-            <th>UDiffSE+</th>
+<th>UDiffSE</th>
 
-            <th>DEPSE-IL</th>
+<th>UDiffSE+</th>
 
-            <th>DEPSE-TL</th>
+<th>DEPSE-IL</th>
 
-            <th>DiffUSEEN</th>
+<th>DEPSE-TL</th>
 
-            <th>ParaDiffUSE-IN</th>
+<th>DiffUSEEN</th>
 
-            <th>ParaDiffUSE-EN</th>
+<th>ParaDiffUSE-IN</th>
 
-        </tr>
-    </thead>
+<th>ParaDiffUSE-EN</th>
 
-    <tbody>
+</tr>
+</thead>
 
-        <tr>
+<tbody>
 
-            <td>sample_1_babble_-5dB</td>
+<tr>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/input.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>sample_1_babble_-5dB</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/sgmse_plus.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls controlsList="nodownload noplaybackrate">
+<source src="./samples/wsj_qut/matched/sample1/clean.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/convtasnet.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls controlsList="nodownload noplaybackrate">
+<source src="./samples/wsj_qut/matched/sample1/input.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/remixit.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/sgmse_plus.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/rvae.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/convtasnet.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/udiffse.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/remixit.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/udiffse_plus.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/rvae.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/depse_il.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/udiffse.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/depse_tl.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/udiffse_plus.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/diffuseen.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/depse_il.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/paradiffuse_in.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/depse_tl.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/matched/sample1/paradiffuse_en.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/diffuseen.wav" type="audio/wav">
+</audio>
+</td>
 
-        </tr>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/paradiffuse_in.wav" type="audio/wav">
+</audio>
+</td>
 
-    </tbody>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/matched/sample1/paradiffuse_en.wav" type="audio/wav">
+</audio>
+</td>
+
+</tr>
+
+</tbody>
 
 </table>
 
@@ -288,119 +308,127 @@ matched and mismatched noise conditions.
 
 <table>
 
-    <thead>
-        <tr>
+<thead>
+<tr>
 
-            <th>Sample</th>
+<th>Sample</th>
 
-            <th>Input</th>
+<th>Clean</th>
 
-            <th>SGMSE+</th>
+<th>Input</th>
 
-            <th>Conv-TasNet</th>
+<th>SGMSE+</th>
 
-            <th>RemixIT</th>
+<th>Conv-TasNet</th>
 
-            <th>RVAE</th>
+<th>RemixIT</th>
 
-            <th>UDiffSE</th>
+<th>RVAE</th>
 
-            <th>UDiffSE+</th>
+<th>UDiffSE</th>
 
-            <th>DEPSE-IL</th>
+<th>UDiffSE+</th>
 
-            <th>DEPSE-TL</th>
+<th>DEPSE-IL</th>
 
-            <th>DiffUSEEN</th>
+<th>DEPSE-TL</th>
 
-            <th>ParaDiffUSE-IN</th>
+<th>DiffUSEEN</th>
 
-            <th>ParaDiffUSE-EN</th>
+<th>ParaDiffUSE-IN</th>
 
-        </tr>
-    </thead>
+<th>ParaDiffUSE-EN</th>
 
-    <tbody>
+</tr>
+</thead>
 
-        <tr>
+<tbody>
 
-            <td>sample_1_street_-5dB</td>
+<tr>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/input.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>sample_1_street_-5dB</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/sgmse_plus.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/clean.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/convtasnet.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/input.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/remixit.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/sgmse_plus.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/rvae.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/convtasnet.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/udiffse.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/remixit.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/udiffse_plus.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/rvae.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/depse_il.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/udiffse.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/depse_tl.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/udiffse_plus.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/diffuseen.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/depse_il.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/paradiffuse_in.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/depse_tl.wav" type="audio/wav">
+</audio>
+</td>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/wsj_qut/mismatched/sample1/paradiffuse_en.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/diffuseen.wav" type="audio/wav">
+</audio>
+</td>
 
-        </tr>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/paradiffuse_in.wav" type="audio/wav">
+</audio>
+</td>
 
-    </tbody>
+<td>
+<audio controls>
+<source src="./samples/wsj_qut/mismatched/sample1/paradiffuse_en.wav" type="audio/wav">
+</audio>
+</td>
+
+</tr>
+
+</tbody>
 
 </table>
 
@@ -410,111 +438,133 @@ matched and mismatched noise conditions.
 
 <h3>VB-DMD</h3>
 
+<!-- ================= MATCHED ================= -->
+
 <h4>Matched Conditions</h4>
 
 <table>
 
-    <thead>
-        <tr>
+<thead>
+<tr>
 
-            <th>Sample</th>
+<th>Sample</th>
 
-            <th>Input</th>
+<th>Clean</th>
 
-            <th>SGMSE+</th>
+<th>Input</th>
 
-            <th>Conv-TasNet</th>
+<th>SGMSE+</th>
 
-            <th>RemixIT</th>
+<th>Conv-TasNet</th>
 
-            <th>RVAE</th>
+<th>RemixIT</th>
 
-            <th>UDiffSE</th>
+<th>RVAE</th>
 
-            <th>UDiffSE+</th>
+<th>UDiffSE</th>
 
-            <th>DEPSE-IL</th>
+<th>UDiffSE+</th>
 
-            <th>DEPSE-TL</th>
+<th>DEPSE-IL</th>
 
-            <th>DiffUSEEN</th>
+<th>DEPSE-TL</th>
 
-            <th>ParaDiffUSE-IN</th>
+<th>DiffUSEEN</th>
 
-            <th>ParaDiffUSE-EN</th>
+<th>ParaDiffUSE-IN</th>
 
-        </tr>
-    </thead>
+<th>ParaDiffUSE-EN</th>
 
-    <tbody>
+</tr>
+</thead>
 
-        <tr>
+<tbody>
 
-            <td>sample_1_white_-5dB</td>
+<tr>
 
-            <td>
-                <audio controls>
-                    <source src="./samples/vb_dmd/matched/sample1/input.wav" type="audio/wav">
-                </audio>
-            </td>
+<td>sample_1_white_-5dB</td>
 
-        </tr>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/clean.wav" type="audio/wav">
+</audio>
+</td>
 
-    </tbody>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/input.wav" type="audio/wav">
+</audio>
+</td>
 
-</table>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/sgmse_plus.wav" type="audio/wav">
+</audio>
+</td>
 
-<h4>Mismatched Conditions</h4>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/convtasnet.wav" type="audio/wav">
+</audio>
+</td>
 
-<table>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/remixit.wav" type="audio/wav">
+</audio>
+</td>
 
-    <thead>
-        <tr>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/rvae.wav" type="audio/wav">
+</audio>
+</td>
 
-            <th>Sample</th>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/udiffse.wav" type="audio/wav">
+</audio>
+</td>
 
-            <th>Input</th>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/udiffse_plus.wav" type="audio/wav">
+</audio>
+</td>
 
-            <th>SGMSE+</th>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/depse_il.wav" type="audio/wav">
+</audio>
+</td>
 
-            <th>Conv-TasNet</th>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/depse_tl.wav" type="audio/wav">
+</audio>
+</td>
 
-            <th>RemixIT</th>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/diffuseen.wav" type="audio/wav">
+</audio>
+</td>
 
-            <th>RVAE</th>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/paradiffuse_in.wav" type="audio/wav">
+</audio>
+</td>
 
-            <th>UDiffSE</th>
+<td>
+<audio controls>
+<source src="./samples/vb_dmd/matched/sample1/paradiffuse_en.wav" type="audio/wav">
+</audio>
+</td>
 
-            <th>UDiffSE+</th>
+</tr>
 
-            <th>DEPSE-IL</th>
-
-            <th>DEPSE-TL</th>
-
-            <th>DiffUSEEN</th>
-
-            <th>ParaDiffUSE-IN</th>
-
-            <th>ParaDiffUSE-EN</th>
-
-        </tr>
-    </thead>
-
-    <tbody>
-
-        <tr>
-
-            <td>sample_1_cafe_0dB</td>
-
-            <td>
-                <audio controls>
-                    <source src="./samples/vb_dmd/mismatched/sample1/input.wav" type="audio/wav">
-                </audio>
-            </td>
-
-        </tr>
-
-    </tbody>
+</tbody>
 
 </table>
 
@@ -524,11 +574,11 @@ matched and mismatched noise conditions.
 
 <div style="padding-left: 15px; padding-right: 15px;">
 
-    <h3>References</h3>
+<h3>References</h3>
 
-    <p>[1] Baseline speech enhancement references.</p>
+<p>[1] Baseline speech enhancement references.</p>
 
-    <p>[2] Proposed method references.</p>
+<p>[2] Proposed method references.</p>
 
 </div>
 
